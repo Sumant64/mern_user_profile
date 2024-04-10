@@ -1,0 +1,21 @@
+
+.registration {
+
+    
+    input {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 3px solid #aaa;
+        border-radius: 0;
+    }
+    input:focus {
+        box-shadow: none;
+    }
+
+    input[type= "submit"]{
+        border: none;
+        float: right;
+    
+    }
+}
