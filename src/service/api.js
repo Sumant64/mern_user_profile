@@ -12,3 +12,8 @@ const config = {
 export const login = (payload) => {
     return axios.post(`${baseURL}/signin`, payload, config);
 }
+
+export const getAbout = (token) => {
+    config.headers['Authorization'] = token
+    return axios.get(`${baseURL}/about`, config);
+}

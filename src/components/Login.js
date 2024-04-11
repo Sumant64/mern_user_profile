@@ -20,11 +20,14 @@ const Login = () => {
       }
 
       const res = await login(payload);
+      console.log(res.data)
       if(res.status === 400 || !res) {
         window.alert("Invalid Credentials");
       } else {
         dispatch({ type: "USER", payload: true });
         window.alert("Login Successfully");
+        const token = res.data.userInfo.token;
+        localStorage.setItem('token', JSON.stringify(token))
         navigate('/');
         setEmail('');
         setPassword('')
