@@ -27,3 +27,8 @@ export const logoutapi = (token) => {
     config.headers['Authorization'] = token
     return axios.get(`${baseURL}/logout`, config);
 }
+
+export const register = (token, payload) => {
+    config.headers['Authorization'] = token
+    return axios.post(`${baseURL}/register`, payload, config);
+}
