@@ -5,8 +5,8 @@ import logo from '../images/logo.png';
 
 const Navbar = () => {
   const { state, dispatch } = useContext(UserContext);
+  console.log(state, '================')
 
-  console.log(state)
 
   const RenderMenu = () => {
     if (state) {
@@ -21,9 +21,9 @@ const Navbar = () => {
           <li className="nav-item">
             <NavLink className="nav-link" to="/contact">Contact</NavLink>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <NavLink className="nav-link" to="/login">Login</NavLink>
-          </li>
+          </li> */}
           <li className="nav-item">
             <NavLink className="nav-link" to="/signup">Registration</NavLink>
           </li>

@@ -22,3 +22,8 @@ export const getData = (token) => {
     config.headers['Authorization'] = token
     return axios.get(`${baseURL}/getdata`, config);
 }
+
+export const logoutapi = (token) => {
+    config.headers['Authorization'] = token
+    return axios.get(`${baseURL}/logout`, config);
+}
