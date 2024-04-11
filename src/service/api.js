@@ -17,3 +17,8 @@ export const getAbout = (token) => {
     config.headers['Authorization'] = token
     return axios.get(`${baseURL}/about`, config);
 }
+
+export const getData = (token) => {
+    config.headers['Authorization'] = token
+    return axios.get(`${baseURL}/getdata`, config);
+}

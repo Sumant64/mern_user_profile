@@ -20,7 +20,6 @@ const Login = () => {
       }
 
       const res = await login(payload);
-      console.log(res.data)
       if(res.status === 400 || !res) {
         window.alert("Invalid Credentials");
       } else {
