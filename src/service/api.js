@@ -32,3 +32,8 @@ export const register = (token, payload) => {
     config.headers['Authorization'] = token
     return axios.post(`${baseURL}/register`, payload, config);
 }
+
+export const postContact = (token, payload) => {
+    config.headers['Authorization'] = token
+    return axios.post(`${baseURL}/contact`, payload, config);
+}
