@@ -4,7 +4,6 @@ import Contact from './components/Contact';
 import ErrorPage from './components/ErrorPage';
 import Home from './components/Home';
 import Login from './components/Login';
-import Logout from './components/Logout';
 import Navbar from './components/Navbar';
 import Signup from './components/Signup';
 import './styles/mainStyle.scss';
@@ -26,7 +25,6 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
-          <Route path='/logout' element={<Logout />} />
           <Route path='/*' element={<ErrorPage />} />
         </Routes>
       </UserContext.Provider>

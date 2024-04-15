@@ -37,7 +37,7 @@ const Navbar = () => {
             <NavLink className="nav-link" to="/contact">Contact</NavLink>
           </li>
           <li className="nav-item">
-            <p onClick={logout} style={{cursor: 'pointer'}}>Logout</p>
+            <p onClick={logout} style={{cursor: 'pointer', paddingTop: '8px'}}>Logout</p>
           </li>
         </>
       )
