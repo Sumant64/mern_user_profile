@@ -1,11 +1,26 @@
 import React, { useContext } from 'react'
 import { UserContext } from '../App'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import logo from '../images/logo.png';
+import { logoutapi } from '../service/api';
 
 const Navbar = () => {
   const { state, dispatch } = useContext(UserContext);
-  console.log(state, '================')
+  const navigate = useNavigate();
+
+  const logout = async() => {
+    try{
+      let token = JSON.parse(localStorage.getItem('token'));
+      const res = await logoutapi(token)
+      dispatch({type: 'USER', payload: false});
+      navigate('/login', {replace: true});
+      localStorage.clear()
+
+    }catch (err) {
+      console.log(err);
+
+    }
+  }
 
 
   const RenderMenu = () => {
@@ -21,12 +36,8 @@ const Navbar = () => {
           <li className="nav-item">
             <NavLink className="nav-link" to="/contact">Contact</NavLink>
           </li>
-          {/* <li className="nav-item">
-            <NavLink className="nav-link" to="/login">Login</NavLink>
-          </li> */}
-          
           <li className="nav-item">
-            <NavLink className="nav-link" to="/logout">Logout</NavLink>
+            <p onClick={logout} style={{cursor: 'pointer'}}>Logout</p>
           </li>
         </>
       )
