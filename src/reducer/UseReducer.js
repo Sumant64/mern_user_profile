@@ -1,4 +1,4 @@
-export const initialState = null;
+export const initialState = localStorage.getItem('token') ? true: null;
 
 export const reducer = (state, action) => {
     if(action.type === 'USER') {
