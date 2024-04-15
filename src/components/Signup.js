@@ -6,7 +6,7 @@ const Signup = () => {
   const navigate = useNavigate();
 
   const [user, setUser] = useState({
-    name: '', email: '', phone: '', work: '', password: '', cpassword: ''
+    name: '', email: '', phone: '', work: '', password: '', cpassword: '', skills: ''
   });
 
   let name, value;
@@ -22,7 +22,7 @@ const Signup = () => {
     try{
       e.preventDefault();
       let token = JSON.parse(localStorage.getItem('token'));
-      const { name, email, phone, work, password, cpassword } = user;
+      const { name, email, phone, work, password, cpassword, skills } = user;
 
       const payload = {
         name,
@@ -31,6 +31,7 @@ const Signup = () => {
         work,
         password,
         cpassword,
+        skills
       }
 
       const res = await register(token, payload);
@@ -84,6 +85,14 @@ const Signup = () => {
                   className="mb-3 form-control"
                   placeholder="Your Profession"
                   value={user.work}
+                  onChange={handleInputs}
+                />
+                <input
+                  name="skills"
+                  type="text"
+                  className="mb-3 form-control"
+                  placeholder="Your Skills"
+                  value={user.skills}
                   onChange={handleInputs}
                 />
                 <input
